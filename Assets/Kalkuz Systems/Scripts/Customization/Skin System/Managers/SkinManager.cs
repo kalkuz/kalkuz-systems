@@ -40,6 +40,6 @@ namespace KalkuzSystems.Customization.SkinSystem
         /// Automatically called from <see cref="Change"/> method. Control for the user actually purchased the skin.
         /// </summary>
         /// <returns>Whether the skin replacement is valid or not.</returns>
-        protected abstract bool Validate(uint skinID);
+        protected abstract bool Validate(string skinID);
     }
 }

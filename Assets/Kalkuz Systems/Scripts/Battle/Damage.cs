@@ -9,7 +9,7 @@ namespace KalkuzSystems.Battle
     public class Damage
     {
         [Tooltip("A vector that holds the information of the range of the damage. X for minimum damage, Y for maximum damage.")]
-        public Vector2 damageRange; //x is min, y is max value
+        public Vector2 damageRange;
         [Tooltip("Type of the damage.")]
         public DamageType damageType;
         public DamageApplicationType damageApplicationType;

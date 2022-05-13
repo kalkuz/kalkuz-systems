@@ -6,8 +6,6 @@ using System.Linq;
 using KalkuzSystems.Attributes;
 using KalkuzSystems.Battle.BuffSystem;
 
-using HeaderAttribute = KalkuzSystems.Attributes.HeaderAttribute;
-
 namespace KalkuzSystems.Battle
 {
     /// <summary>
@@ -21,7 +19,7 @@ namespace KalkuzSystems.Battle
         /// <summary>
         /// Resource list which includes health, mana etc.
         /// </summary>
-        [Header("Main Stats")]
+        [Title("Main Stats")]
         [SerializeField] protected List<ResourceContainer> resources;
         
         /// <summary>
@@ -32,7 +30,7 @@ namespace KalkuzSystems.Battle
         /// <summary>
         /// Damage resistance list such as Physical Resistance.
         /// </summary>
-        [Header("Resistances", order = 1)]
+        [Title("Resistances", order = 1)]
         [SerializeField] protected List<ResistanceContainer> resistances;
         
         /// <summary>
@@ -43,7 +41,7 @@ namespace KalkuzSystems.Battle
         /// <summary>
         /// The indicator of the pace of movement.
         /// </summary>
-        [Header("Movement", order = 1)]
+        [Title("Movement", order = 1)]
         public float movementSpeed;
         
         /// <summary>

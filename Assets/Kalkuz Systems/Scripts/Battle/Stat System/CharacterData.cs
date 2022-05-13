@@ -107,7 +107,7 @@ namespace KalkuzSystems.Battle
 
             if (healthBar)
             {
-                var instantiatedHPBar = Instantiate(healthBar, CanvasReferenceContainer.Instance.worldSpace.transform);
+                var instantiatedHPBar = Instantiate(healthBar);
                 var healthBarComponent = instantiatedHPBar.GetComponent<HealthBar>();
                 healthBarComponent.Initialize(this);
             }

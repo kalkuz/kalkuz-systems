@@ -1,13 +1,13 @@
 using System;
-using System.Collections.Generic;
-using KalkuzSystems.Analysis.Debugging;
+using KalkuzSystems.Battle;
+using KalkuzSystems.DataStructures.Generics;
 using UnityEngine;
 
 public class Tester : MonoBehaviour
 {
-    [ContextMenu("Log")]
-    public void Log()
+    public SerializableDictionary<string, ResourceContainer> resources;
+
+    void Start()
     {
-        KalkuzLogger.Info("Info message");
     }
 }

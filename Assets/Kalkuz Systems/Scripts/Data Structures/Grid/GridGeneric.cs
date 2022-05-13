@@ -5,8 +5,6 @@ using KalkuzSystems.Utility.Arrays;
 using KalkuzSystems.Utility.Transform;
 using UnityEngine;
 
-using HeaderAttribute = KalkuzSystems.Attributes.HeaderAttribute;
-
 namespace KalkuzSystems.DataStructures.Grid
 {
     public enum GridAlignment { XY, XZ, YZ }
@@ -21,7 +19,7 @@ namespace KalkuzSystems.DataStructures.Grid
         [SerializeField] private Vector2 gridCell;
         private T[,] grid;
 
-        [Header("Debug")]
+        [Title("Debug")]
         [SerializeField] Vector2Int indices;
         [SerializeField] [ReadOnly] T objectAtIndex;
 

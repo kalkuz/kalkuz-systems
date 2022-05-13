@@ -49,7 +49,7 @@ namespace KalkuzSystems.Customization.SkinSystem
             return true;
         }
 
-        protected override bool Validate(uint skinID)
+        protected override bool Validate(string skinID)
         {
             // Todo: implement functionality
             return true;

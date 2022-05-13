@@ -245,6 +245,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227a856638cff64fb6578963b37c889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resources:
+    dictionary:
+    - key: Health
+      value:
+        resourceType: 0
+        amount: 0
+        increasePerLevelScalar: 0
+        increaseCurve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
+    - key: Mana
+      value:
+        resourceType: 0
+        amount: 0
+        increasePerLevelScalar: 0
+        increaseCurve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
 --- !u!4 &1144633382
 Transform:
   m_ObjectHideFlags: 0
