@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace KalkuzSystems.DataStructures.Pooling
 {
-    public class Pool
+    public sealed class Pool
     {
-        protected Queue<PoolObject> queue;
+        private Queue<PoolObject> queue;
 
         public Pool Initialize()
         {
@@ -24,7 +24,7 @@ namespace KalkuzSystems.DataStructures.Pooling
             if (queue.Count > 0) return queue.Dequeue();
             else
             {
-                return GameObject.Instantiate(objectRef.gameObject).GetComponent<PoolObject>();
+                return Object.Instantiate(objectRef.gameObject).GetComponent<PoolObject>();
             }
         }
     }

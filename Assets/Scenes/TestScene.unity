@@ -216,6 +216,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &937188289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937188290}
+  m_Layer: 0
+  m_Name: Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &937188290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937188289}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1144633380
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,30 +275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227a856638cff64fb6578963b37c889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resources:
-    dictionary:
-    - key: Health
-      value:
-        resourceType: 0
-        amount: 0
-        increasePerLevelScalar: 0
-        increaseCurve:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-    - key: Mana
-      value:
-        resourceType: 0
-        amount: 0
-        increasePerLevelScalar: 0
-        increaseCurve:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
+  projectileSkillData: {fileID: 11400000, guid: f253db8a7cb17604ab93c0468443fce9, type: 2}
+  source: {fileID: 937188290}
 --- !u!4 &1144633382
 Transform:
   m_ObjectHideFlags: 0

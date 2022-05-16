@@ -16,7 +16,7 @@ namespace KalkuzSystems.Attributes
         /// <param name="height">The height of the line</param>
         /// <param name="verticalPadding">The vertical spacing of the line</param>
         /// <param name="grayScale">The color of the line in terms of gray scale represented between 0 and 1</param>
-        public LineSeparatorAttribute(float height, float verticalPadding, float grayScale = 0.4f)
+        public LineSeparatorAttribute(float height = 1, float verticalPadding = 16, float grayScale = 0.4f)
         {
             this.height = height;
             this.verticalPadding = verticalPadding;

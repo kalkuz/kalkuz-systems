@@ -164,6 +164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 905789729533722020, guid: 65d8e068c2e31c94e82e732f2b65782f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 905789729533722030, guid: 65d8e068c2e31c94e82e732f2b65782f, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -208,7 +212,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 905789729533722018, guid: 65d8e068c2e31c94e82e732f2b65782f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65d8e068c2e31c94e82e732f2b65782f, type: 3}
 --- !u!1 &156762493
 GameObject:
@@ -672,6 +677,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 905789729533722020, guid: 65d8e068c2e31c94e82e732f2b65782f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 905789729533722030, guid: 65d8e068c2e31c94e82e732f2b65782f, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -716,7 +725,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 905789729533722018, guid: 65d8e068c2e31c94e82e732f2b65782f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65d8e068c2e31c94e82e732f2b65782f, type: 3}
 --- !u!1 &668163062
 GameObject:
@@ -884,7 +894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &829029672
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -7117,7 +7127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227a856638cff64fb6578963b37c889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damages: []
+  resources:
+    dictionary: []
 --- !u!1 &2005621036
 GameObject:
   m_ObjectHideFlags: 0
@@ -7161,10 +7172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f227a856638cff64fb6578963b37c889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damages:
-  - damageRange: {x: 0, y: 0}
-    damageType: 0
-    damageApplicationType: 0
+  resources:
+    dictionary: []
 --- !u!1 &2033301286
 GameObject:
   m_ObjectHideFlags: 0
@@ -7178,7 +7187,6 @@ GameObject:
   - component: {fileID: 2033301290}
   - component: {fileID: 2033301293}
   - component: {fileID: 2033301289}
-  - component: {fileID: 2033301287}
   - component: {fileID: 2033301295}
   m_Layer: 6
   m_Name: Player
@@ -7186,52 +7194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2033301287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033301286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5857e3ff9d1ef142a475a2dcfa64d88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillManager:
-    skills:
-    - castAutomation: 0
-      secondsBetweenCasts: 0
-      inheritDamageTypeUpgrade: 0
-      available: 0
-      baseSkill: {fileID: 11400000, guid: 9ceeb504cefb7bc4c84202d5cff7588d, type: 2}
-      targets:
-        serializedVersion: 2
-        m_Bits: 256
-      skill: {fileID: 0}
-      attachments: []
-      OnAttachmentChanged:
-        m_PersistentCalls:
-          m_Calls: []
-    - castAutomation: 0
-      secondsBetweenCasts: 0
-      inheritDamageTypeUpgrade: 0
-      available: 0
-      baseSkill: {fileID: 11400000, guid: cf90580482550d3479d2a93df03aff4d, type: 2}
-      targets:
-        serializedVersion: 2
-        m_Bits: 256
-      skill: {fileID: 0}
-      attachments: []
-      OnAttachmentChanged:
-        m_PersistentCalls:
-          m_Calls: []
-  projectileOut: {fileID: 93764872}
-  meleeAttackPoint: {fileID: 0}
-  onDestroy:
-    m_PersistentCalls:
-      m_Calls: []
+  m_IsActive: 0
 --- !u!114 &2033301289
 MonoBehaviour:
   m_ObjectHideFlags: 0
