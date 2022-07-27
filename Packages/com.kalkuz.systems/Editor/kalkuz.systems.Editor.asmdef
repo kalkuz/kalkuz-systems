@@ -1,0 +1,16 @@
+{
+    "name": "kalkuz.systems.Editor",
+    "rootNamespace": "KalkuzSystems",
+    "references": [
+        "GUID:991d3751a83e5f840bd8254fd7fb944e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

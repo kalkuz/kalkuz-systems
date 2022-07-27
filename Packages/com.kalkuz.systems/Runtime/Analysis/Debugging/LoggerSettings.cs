@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using KalkuzSystems.Attributes;
-using UnityEditor;
-using UnityEditor.UIElements;
+﻿using KalkuzSystems.Attributes;
 using UnityEngine;
-using UnityEngine.UIElements;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace KalkuzSystems.Analysis.Debugging
 {
@@ -75,6 +74,7 @@ namespace KalkuzSystems.Analysis.Debugging
 
         #endregion
 
+#if UNITY_EDITOR
         #region SettingsProvider
 
         internal static LoggerSettings GetSettings()
@@ -89,9 +89,11 @@ namespace KalkuzSystems.Analysis.Debugging
             return settings;
         }
 
-        #endregion
+#endregion
+#endif
     }
 
+#if UNITY_EDITOR
     #region SettingsProvider
 
     static class LoggerSettingsProviderRegister
@@ -109,5 +111,6 @@ namespace KalkuzSystems.Analysis.Debugging
         }
     }    
 
-    #endregion
+#endregion
+#endif
 }

@@ -22,13 +22,10 @@ namespace KalkuzSystems.DataStructures.Grid
         [Title("Debug")]
         [SerializeField] Vector2Int indices;
         [SerializeField] [ReadOnly] T objectAtIndex;
-
-        private GridManager manager;
-
-        public void Initialize(GridManager manager)
+        
+        public void Initialize()
         {
             grid = new T[dimensions.x, dimensions.y];
-            this.manager = manager;
         }
 
         public void Set(int x, int y, T obj)
@@ -127,21 +124,21 @@ namespace KalkuzSystems.DataStructures.Grid
             }
         }
 
-        public bool WorldPointToGridIndices(Vector3 point, out int x, out int y)
+        public bool WorldPointToGridIndices(Vector3 worldOrigin, Vector3 point, out int x, out int y)
         {
             switch (alignment)
             {
                 case GridAlignment.XY:
-                    x = Mathf.FloorToInt((point.x - manager.transform.position.x) / gridCell.x);
-                    y = Mathf.FloorToInt((point.y - manager.transform.position.y) / gridCell.y);
+                    x = Mathf.FloorToInt((point.x - worldOrigin.x) / gridCell.x);
+                    y = Mathf.FloorToInt((point.y - worldOrigin.y) / gridCell.y);
                     return true;
                 case GridAlignment.XZ:
-                    x = Mathf.FloorToInt((point.x - manager.transform.position.x) / gridCell.x);
-                    y = Mathf.FloorToInt((point.z - manager.transform.position.z) / gridCell.y);
+                    x = Mathf.FloorToInt((point.x - worldOrigin.x) / gridCell.x);
+                    y = Mathf.FloorToInt((point.z - worldOrigin.z) / gridCell.y);
                     return true;
                 case GridAlignment.YZ:
-                    x = Mathf.FloorToInt((point.y - manager.transform.position.y) / gridCell.x);
-                    y = Mathf.FloorToInt((point.z - manager.transform.position.z) / gridCell.y);
+                    x = Mathf.FloorToInt((point.y - worldOrigin.y) / gridCell.x);
+                    y = Mathf.FloorToInt((point.z - worldOrigin.z) / gridCell.y);
                     return true;
                 default:
                     x = -1;
@@ -149,20 +146,20 @@ namespace KalkuzSystems.DataStructures.Grid
                     return false;
             }
         }
-        public Vector3 GridIndicesToWorldPoint(int x, int y)
+        public Vector3 GridIndicesToWorldPoint(Vector3 worldOrigin, int x, int y)
         {
             if (!grid.ContainsIndices(x, y)) throw new System.IndexOutOfRangeException();
 
             switch (alignment)
             {
                 case GridAlignment.XY:
-                    return new Vector3(x * gridCell.x, y * gridCell.y) + manager.transform.position;
+                    return new Vector3(x * gridCell.x, y * gridCell.y) + worldOrigin;
                 case GridAlignment.XZ:
-                    return new Vector3(x * gridCell.x, 0f, y * gridCell.y) + manager.transform.position;
+                    return new Vector3(x * gridCell.x, 0f, y * gridCell.y) + worldOrigin;
                 case GridAlignment.YZ:
-                    return new Vector3(0f, x * gridCell.x, y * gridCell.y) + manager.transform.position;
+                    return new Vector3(0f, x * gridCell.x, y * gridCell.y) + worldOrigin;
                 default:
-                    return Vector3.zero + manager.transform.position;
+                    return Vector3.zero + worldOrigin;
             }
         }
 
