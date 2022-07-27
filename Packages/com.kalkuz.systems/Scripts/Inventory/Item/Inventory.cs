@@ -166,45 +166,5 @@ namespace KalkuzSystems.Inventory
                 .ThenBy(item => item != null ? item.itemName : string.Empty).ToArray();
             }
         }
-
-
-        [ContextMenu("Craft")]
-        public void Craft()
-        {
-            recipe.Process(this);
-            Repaint();
-        }
-        public void Repaint()
-        {
-            InventoryUIManager.Instance.GUIRepaint();
-        }
-        [ContextMenu("Add Item")]
-        public void AddItem()
-        {
-            var i = _item.Clone();
-            i.currentStacks = itemStacks;
-            AddItem(i);
-            Repaint();
-        }
-        [ContextMenu("Set Item")]
-        public void SetItem()
-        {
-            var i = _item.Clone();
-            i.currentStacks = itemStacks;
-            SetItem(_x, _y, i);
-            Repaint();
-        }
-        [ContextMenu("Order Ascending")]
-        public void OrderAscending()
-        {
-            SortInventory();
-            Repaint();
-        }
-        [ContextMenu("Order Descending")]
-        public void OrderDescending()
-        {
-            SortInventory(true);
-            Repaint();
-        }
     }
 }

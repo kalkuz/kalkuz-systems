@@ -11,7 +11,7 @@ namespace KalkuzSystems.Battle
     /// <summary>
     /// Container for both data and logic for a Character's properties.
     /// </summary>
-    public class CharacterData : MonoBehaviour
+    public sealed class CharacterData : MonoBehaviour
     {
         #region Fields
 
@@ -24,36 +24,38 @@ namespace KalkuzSystems.Battle
         /// Determines whether or not the script should start itself automatically.
         /// </summary>
         [Tooltip("Should the script start automatically?")] 
-        [SerializeField] protected bool initializeOnStart;
+        [SerializeField] private bool initializeOnStart;
         
         /// <summary>
         /// Name of the entity which may be used for UI texts.
         /// </summary>
         [Tooltip("Name of the entity.")] 
-        [SerializeField] protected string characterName;
+        [SerializeField] private string characterName;
+
+        [SerializeField] private List<HostilityTag> tags;
 
         /// <summary>
         /// The system that manages the stats of the character.
         /// </summary>
         [Tooltip("The container for stats of the character.")]
-        [SerializeField] protected StatSystem stats;
+        [SerializeField] private StatSystem stats;
 
         /// <summary>
         /// The UI element that is used to indicate health.
         /// </summary>
         [Header("References")]
-        [SerializeField] protected GameObject healthBar;
+        [SerializeField] private GameObject healthBar;
 
         /// <summary>
         /// The highlighter script responsible for object's various actions.
         /// </summary>
-        [SerializeField] protected Highlighter highlighter;
+        [SerializeField] private Highlighter highlighter;
 
         [Header("Events")]
-        [SerializeField] protected UnityEvent<CharacterData> onDeath;
-        [SerializeField] protected UnityEvent<CharacterData> onSizeChanged;
-        [SerializeField] protected UnityEvent<CharacterData, DamageType> onResistanceChanged;
-        [SerializeField] protected UnityEvent<CharacterData, ResourceType> onResourceChanged;
+        [SerializeField] private UnityEvent<CharacterData> onDeath;
+        [SerializeField] private UnityEvent<CharacterData> onSizeChanged;
+        [SerializeField] private UnityEvent<CharacterData, DamageType> onResistanceChanged;
+        [SerializeField] private UnityEvent<CharacterData, ResourceType> onResourceChanged;
 
         #endregion
 
@@ -61,6 +63,8 @@ namespace KalkuzSystems.Battle
 
         /// <inheritdoc cref="characterName"/>
         public string CharacterName => characterName;
+
+        public List<HostilityTag> Tags => tags;
         
         /// <inheritdoc cref="stats"/>
         public StatSystem Stats => stats;
@@ -73,18 +77,15 @@ namespace KalkuzSystems.Battle
         /// </summary>
         public UnityEvent<CharacterData> OnDeath => onDeath;
         
-        
         /// <summary>
         /// Event that follows any change in the character's size.
         /// </summary>
         public UnityEvent<CharacterData> OnSizeChanged => onSizeChanged;
         
-        
         /// <summary>
         /// Event that follows any change in the character's resistances.
         /// </summary>
         public UnityEvent<CharacterData, DamageType> OnResistancesChanged => onResistanceChanged;
-        
         
         /// <summary>
         /// Event that follows any change in the character's resources.
@@ -101,7 +102,7 @@ namespace KalkuzSystems.Battle
         /// <summary>
         /// Initializes the connected props that are belong to Character Data object.
         /// </summary>
-        public virtual void Initialize()
+        public void Initialize()
         {
             Stats.Initialize(this);
 
@@ -130,12 +131,12 @@ namespace KalkuzSystems.Battle
             }
         }
 
-        public virtual void TakeDamage(Damage damage, float accuracy, float critChance, float critMultiplier)
+        public void TakeDamage(Damage damage, float accuracy, float critChance, float critMultiplier)
         {
             Stats.TakeDamage(damage, accuracy, critChance, critMultiplier);
         }
 
-        public virtual void Die()
+        public void Die()
         {
             if (TryGetComponent<CapsuleCollider>(out var capsuleCollider))
             {
@@ -156,7 +157,7 @@ namespace KalkuzSystems.Battle
             this.enabled = false;
         }
 
-        public virtual bool CanMove()
+        public bool CanMove()
         {
             foreach (StatusEffect item in StatusEffectHelpers.movementPreventers)
             {

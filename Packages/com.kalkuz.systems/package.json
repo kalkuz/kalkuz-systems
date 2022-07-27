@@ -1,0 +1,23 @@
+{
+  "name": "com.kalkuz.systems",
+  "version": "0.0.1",
+  "displayName": "Kalkuz Systems",
+  "description": "Kalkuz Systems is set of C# scripts that helps prototyping.",
+  "category": "Tools",
+  "unity": "2020.3",
+  "unityRelease": "21f1",
+  "documentationUrl": "",
+  "changelogUrl": "",
+  "licensesUrl": "",
+  "dependencies": {
+ },
+ "keywords": [
+    "scripts",
+    "tools"
+  ],
+  "author": {
+    "name": "Oğuzhan Kalkuz",
+    "email": "oguzhan@kalkuz.me",
+    "url": ""
+  }
+}
