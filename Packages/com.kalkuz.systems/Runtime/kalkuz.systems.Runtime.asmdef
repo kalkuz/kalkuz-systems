@@ -1,5 +1,5 @@
 {
-    "name": "kalkuz.systems",
+    "name": "kalkuz.systems.Runtime",
     "rootNamespace": "KalkuzSystems",
     "references": [],
     "includePlatforms": [],
